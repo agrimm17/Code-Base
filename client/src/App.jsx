@@ -8,17 +8,23 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
+import PaletteIcon from '@mui/icons-material/Palette';
 import MenuIcon from '@mui/icons-material/Menu';
+import CheckIcon from '@mui/icons-material/Check';
 import { ColorModeContext } from './theme/ColorModeContext';
+import { THEME_OPTIONS } from './theme/theme';
+import WelcomeOverlay from './components/WelcomeOverlay';
 import IntroductionPage from './pages/IntroductionPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
+
+const WELCOME_OVERLAY_STORAGE_KEY = 'welcomeOverlaySeen';
 
 const navItems = [
   { label: 'Introduction', path: '/' },
@@ -45,10 +51,41 @@ export default function App() {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { mode, toggleColorMode } = useContext(ColorModeContext);
+  const [themeMenuAnchor, setThemeMenuAnchor] = useState(null);
+  const [welcomeOpen, setWelcomeOpen] = useState(() => {
+    try {
+      return !localStorage.getItem(WELCOME_OVERLAY_STORAGE_KEY);
+    } catch {
+      return true;
+    }
+  });
+  const { mode, setTheme } = useContext(ColorModeContext);
+
+  const handleWelcomeClose = () => {
+    try {
+      localStorage.setItem(WELCOME_OVERLAY_STORAGE_KEY, 'true');
+    } catch {
+      // ignore
+    }
+    setWelcomeOpen(false);
+  };
+
+  const handleShowAgain = () => {
+    try {
+      localStorage.removeItem(WELCOME_OVERLAY_STORAGE_KEY);
+    } catch {
+      // ignore
+    }
+    setWelcomeOpen(false);
+  };
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <WelcomeOverlay
+        open={welcomeOpen}
+        onClose={handleWelcomeClose}
+        onShowAgain={handleShowAgain}
+      />
       <AppBar position="static">
         <Toolbar>
           {isSmall && (
@@ -57,7 +94,7 @@ export default function App() {
             </IconButton>
           )}
           <Typography variant="h6" component={Link} to="/" sx={{ flexGrow: 1, textDecoration: 'none', color: 'inherit' }}>
-            Portfolio
+            Alex's Code-Base
           </Typography>
           {!isSmall && (
             <Box sx={{ display: 'flex', gap: 1 }}>
@@ -74,9 +111,37 @@ export default function App() {
               ))}
             </Box>
           )}
-          <IconButton color="inherit" onClick={toggleColorMode} aria-label="Toggle light/dark mode">
-            {mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+          <IconButton
+            color="inherit"
+            onClick={(e) => setThemeMenuAnchor(e.currentTarget)}
+            aria-label="Choose theme"
+            aria-controls={themeMenuAnchor ? 'theme-menu' : undefined}
+            aria-haspopup="true"
+          >
+            <PaletteIcon />
           </IconButton>
+          <Menu
+            id="theme-menu"
+            anchorEl={themeMenuAnchor}
+            open={Boolean(themeMenuAnchor)}
+            onClose={() => setThemeMenuAnchor(null)}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+          >
+            {THEME_OPTIONS.map(({ id, label }) => (
+              <MenuItem
+                key={id}
+                onClick={() => {
+                  setTheme(id);
+                  setThemeMenuAnchor(null);
+                }}
+              >
+                {mode === id && <CheckIcon sx={{ mr: 1, fontSize: 20 }} />}
+                {mode !== id && <Box component="span" sx={{ width: 28, mr: 1 }} />}
+                {label}
+              </MenuItem>
+            ))}
+          </Menu>
         </Toolbar>
       </AppBar>
 
