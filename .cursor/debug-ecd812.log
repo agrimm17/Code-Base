@@ -1,0 +1,81 @@
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149065788,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149065790,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:catch","message":"Projects fetch error","data":{"err":"TypeError: Failed to fetch"},"timestamp":1772149065804,"hypothesisId":"D"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:catch","message":"Projects fetch error","data":{"err":"TypeError: Failed to fetch"},"timestamp":1772149065804,"hypothesisId":"D"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:render","message":"Empty filtered state","data":{"projectsLength":0,"filteredLength":0,"nameFilter":"","nameFilterLen":0,"techFilterLen":0},"timestamp":1772149065804,"hypothesisId":"E"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:render","message":"Empty filtered state","data":{"projectsLength":0,"filteredLength":0,"nameFilter":"","nameFilterLen":0,"techFilterLen":0},"timestamp":1772149065805,"hypothesisId":"E"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149160312,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149160313,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149160329,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149160331,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149160332,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149160333,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149268606,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149268618,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149268620,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149278014,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149278026,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149278027,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149429747,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149429748,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149429763,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149429764,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149429767,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149429768,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149429893,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149429895,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149429910,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149429950,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149429982,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149430013,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149430030,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149430031,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149430032,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149430034,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149430037,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149430039,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149430040,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149430040,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149430041,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149439115,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149439118,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149439138,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149439138,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149439141,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149439142,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149454111,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149454112,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149454129,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149454130,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149454166,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772149454167,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149454173,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772149454174,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149454175,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149454175,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149454238,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772149454239,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772150798222,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772150798223,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772150798237,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772150798237,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772150798239,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772150798239,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772325661387,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772325661391,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772325661409,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772325661409,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772325661411,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772325661411,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772327347193,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772327347194,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772327347208,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772327347208,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772327347210,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772327347211,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772642134571,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:fetch","message":"Projects fetch start","data":{"url":"http://localhost:5001/api/projects","API_BASE":"http://localhost:5001"},"timestamp":1772642134579,"hypothesisId":"A"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772642134930,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772642134932,"hypothesisId":"C"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(res)","message":"Projects response","data":{"ok":true,"status":200},"timestamp":1772642134941,"hypothesisId":"B"}
+{"sessionId":"ecd812","location":"ProjectsPage.jsx:then(data)","message":"Projects data parsed","data":{"isArray":true,"length":6},"timestamp":1772642134942,"hypothesisId":"C"}

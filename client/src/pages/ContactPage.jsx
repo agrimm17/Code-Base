@@ -71,7 +71,7 @@ export default function ContactPage() {
         Contact me
       </Typography>
       <Typography variant='body1' color='text.secondary' sx={{ mb: 3 }}>
-        [Placeholder: Short blurb inviting visitors to get in touch.]
+        Thanks for stopping by! If you have any questions or would like to get in touch, leave your email below and I'll get back to you as soon as possible.
       </Typography>
       <Box component='form' onSubmit={handleSubmit} noValidate>
         <TextField
