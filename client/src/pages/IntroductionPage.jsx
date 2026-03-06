@@ -2,11 +2,14 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 const journeyCopy =
-  "I began as a self-taught developer. I enjoy learning new technologies and finding efficiencies in my work, which has helped me grow to where I am now. \n\n I believe AI is a tool, not a replacement. It can be an excellent teacher, but at the end of the day, we are responsible for our code.";
+  "I started my path as a self-taught developer, driven by curiosity and a desire to understand how things work. Learning independently taught me how to research, experiment, and grow without relying on external guidance. I see AI as a powerful tool for learning and productivity, but not a substitute for understanding. At the end of the day, developers are responsible for the quality and integrity of the code we write.";
 
 const aboutCopy =
-  "I'm a full stack software engineer with a central focus on JavaScript, React and Redux for the frontend, Node.js/Express and PostgreSQL on the backend. I'm also experienced in HTML and S/CSS, and I'm always looking for new techs to explore! ";
+  "I’m a full-stack software engineer with a strong focus on JavaScript. On the frontend, I primarily work with React and Redux, and on the backend I work with Node.js, Express, and PostgreSQL. I’m also comfortable working with HTML and modern CSS, and I’m always exploring new technologies to help me build better software.";
 
+const goalsCopy = "At this stage in my career, I’m focused on deepening my understanding of the systems I work with and contributing in consistent, meaningful ways. I value any opportunities where I can learn from experienced developers, find solutions to my problems, and improve the quality of the products I help build. My goal is simple: grow as an engineer and deliver reliable work."
+
+const valuesCopy = "I believe great software comes from great teams. Organization, transparency, and collaboration make it possible for teams to function effectively, and are all values I hold highly. The best work happens when everyone understands the goal, communicates openly, and supports each other along the way."
 export default function IntroductionPage() {
   return (
     <Box
@@ -30,8 +33,20 @@ export default function IntroductionPage() {
         <Typography variant="h4" component="h1" gutterBottom sx={{ mt: 3 }}>
           My Journey
         </Typography>
-        <Typography variant="body1" color="text.secondary">
+        <Typography variant="body1" color="text.secondary" paragraph>
           {journeyCopy}
+        </Typography>
+        <Typography variant="h4" component="h1" gutterBottom sx={{ mt: 3 }}>
+          My Goals
+        </Typography>
+        <Typography variant="body1" color="text.secondary" paragraph>
+          {goalsCopy}
+        </Typography>
+        <Typography variant="h4" component="h1" gutterBottom sx={{ mt: 3 }}>
+          My Values
+        </Typography>
+        <Typography variant="body1" color="text.secondary">
+          {valuesCopy}
         </Typography>
       </Box>
     </Box>
