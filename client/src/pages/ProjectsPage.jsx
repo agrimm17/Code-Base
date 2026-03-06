@@ -203,7 +203,7 @@ export default function ProjectsPage() {
   return (
     <Container maxWidth='lg' sx={{ py: 4 }}>
       <Typography variant='h4' component='h1' gutterBottom>
-        Projects
+        Projects (UNDER CONSTRUCTION)
       </Typography>
       <Box
         sx={{
