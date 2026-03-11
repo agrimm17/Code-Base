@@ -6,11 +6,11 @@ const PLACEHOLDER_IMAGE = 'https://placehold.co/400x240?text=Project';
 const projects = [
   {
     id: '1',
-    name: 'Placeholder Project One',
-    description: 'A short description of the first placeholder project. Replace with your real project details.',
-    technologies: ['React', 'Node.js', 'JavaScript'],
-    thumbnailUrl: PLACEHOLDER_IMAGE,
-    link: '#',
+    name: 'PodMD',
+    description: 'Kuberbetes management app that facilitates the automated reset of impacted pods',
+    technologies: ['React', 'CSS', 'Node.js', 'JavaScript', 'Kubernetes', 'Prometheus', 'Docker', 'Helm', 'Kubectl', 'PromQL', 'MiniKube', 'Chart.js', 'Electron', 'MUI', 'Jest', ],
+    thumbnailUrl: '/thumbnails/PodMD.png',
+    link: 'https://github.com/agrimm17/PodMD',
   },
   {
     id: '2',
