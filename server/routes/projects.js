@@ -57,11 +57,11 @@ const projects = [
   },
   {
     id: '4',
-    name: 'API Dashboard',
-    description: 'Dashboard for monitoring API health and usage. Placeholder for your real project.',
-    technologies: ['React', 'TypeScript', 'Express', 'PostgreSQL'],
-    thumbnailUrl: PLACEHOLDER_IMAGE,
-    link: '#',
+    name: 'Code-Base',
+    description: 'Personal website to showcase projects and information about myself.',
+    technologies: ['JavaScript', 'React', 'Node.js', 'Express', 'CSS', 'MUI', 'Nodemailer'],
+    thumbnailUrl: '/thumbnails/Code-Base.png',
+    link: 'https://github.com/agrimm17/Code-Base',
   },
   {
     id: '5',
