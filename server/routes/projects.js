@@ -9,7 +9,7 @@ const projects = [
     name: 'PodMD',
     description: 'Kuberbetes management app that facilitates the automated reset of impacted pods',
     technologies: ['JavaScript',
-  'React?',
+  'React...',
   'Node.js',
   'Express',
   'CSS',
