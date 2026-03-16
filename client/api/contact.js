@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 const INBOX_EMAIL = 'alexandergrimm17@gmail.com';
 
@@ -12,7 +12,7 @@ function escapeHtml(s) {
     .replace(/'/g, '&#39;');
 }
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ success: false, error: 'Method not allowed' });
