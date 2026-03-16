@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+const API_BASE = import.meta.env.VITE_API_URL ?? '';
 
 export default function ContactPage() {
   const [name, setName] = useState('');
@@ -52,7 +52,7 @@ export default function ContactPage() {
           message: data.error || 'Something went wrong.',
         });
       }
-    } catch (_) {
+    } catch {
       setSnack({
         open: true,
         severity: 'error',

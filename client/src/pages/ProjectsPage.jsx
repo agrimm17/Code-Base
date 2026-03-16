@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -21,128 +21,23 @@ import ViewModule from '@mui/icons-material/ViewModule';
 import ViewCarousel from '@mui/icons-material/ViewCarousel';
 import ViewList from '@mui/icons-material/ViewList';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+import { projects as projectsData } from '../data/projects';
+
+function getAllTech(projects) {
+  const techSet = new Set();
+  projects.forEach((p) =>
+    (p.technologies || []).forEach((t) => techSet.add(t)),
+  );
+  return [...techSet].sort();
+}
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [projects] = useState(projectsData);
   const [viewMode, setViewMode] = useState('grid');
   const [nameFilter, setNameFilter] = useState('');
   const [techFilter, setTechFilter] = useState([]);
-  const [allTech, setAllTech] = useState([]);
+  const [allTech] = useState(() => getAllTech(projectsData));
   const carouselScrollRef = useRef(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    const url = `${API_BASE}/api/projects`;
-    // #region agent log
-    fetch('http://127.0.0.1:7899/ingest/649faeab-f930-4e13-8236-1e6f32487b36', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Debug-Session-Id': 'ecd812',
-      },
-      body: JSON.stringify({
-        sessionId: 'ecd812',
-        location: 'ProjectsPage.jsx:fetch',
-        message: 'Projects fetch start',
-        data: { url, API_BASE },
-        timestamp: Date.now(),
-        hypothesisId: 'A',
-      }),
-    }).catch(() => {});
-    // #endregion
-    fetch(url)
-      .then((res) => {
-        // #region agent log
-        fetch(
-          'http://127.0.0.1:7899/ingest/649faeab-f930-4e13-8236-1e6f32487b36',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-Debug-Session-Id': 'ecd812',
-            },
-            body: JSON.stringify({
-              sessionId: 'ecd812',
-              location: 'ProjectsPage.jsx:then(res)',
-              message: 'Projects response',
-              data: { ok: res.ok, status: res.status },
-              timestamp: Date.now(),
-              hypothesisId: 'B',
-            }),
-          },
-        ).catch(() => {});
-        // #endregion
-        return res.json();
-      })
-      .then((data) => {
-        // #region agent log
-        fetch(
-          'http://127.0.0.1:7899/ingest/649faeab-f930-4e13-8236-1e6f32487b36',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-Debug-Session-Id': 'ecd812',
-            },
-            body: JSON.stringify({
-              sessionId: 'ecd812',
-              location: 'ProjectsPage.jsx:then(data)',
-              message: 'Projects data parsed',
-              data: {
-                isArray: Array.isArray(data),
-                length: Array.isArray(data) ? data.length : undefined,
-                firstKey:
-                  !Array.isArray(data) && data && typeof data === 'object'
-                    ? Object.keys(data)[0]
-                    : undefined,
-              },
-              timestamp: Date.now(),
-              hypothesisId: 'C',
-            }),
-          },
-        ).catch(() => {});
-        // #endregion
-        if (!cancelled && Array.isArray(data)) {
-          setProjects(data);
-          const techSet = new Set();
-          data.forEach((p) =>
-            (p.technologies || []).forEach((t) => techSet.add(t)),
-          );
-          setAllTech([...techSet].sort());
-        }
-      })
-      .catch((err) => {
-        // #region agent log
-        fetch(
-          'http://127.0.0.1:7899/ingest/649faeab-f930-4e13-8236-1e6f32487b36',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-Debug-Session-Id': 'ecd812',
-            },
-            body: JSON.stringify({
-              sessionId: 'ecd812',
-              location: 'ProjectsPage.jsx:catch',
-              message: 'Projects fetch error',
-              data: { err: String(err) },
-              timestamp: Date.now(),
-              hypothesisId: 'D',
-            }),
-          },
-        ).catch(() => {});
-        // #endregion
-        if (!cancelled) setProjects([]);
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   const filtered = projects.filter((p) => {
     const nameMatch =
@@ -173,32 +68,6 @@ export default function ProjectsPage() {
     if (viewMode !== 'carousel' || !el || filtered.length === 0) return;
     el.scrollLeft = el.scrollWidth / 3;
   }, [viewMode, filtered]);
-
-  // #region agent log
-  if (!loading && filtered.length === 0) {
-    fetch('http://127.0.0.1:7899/ingest/649faeab-f930-4e13-8236-1e6f32487b36', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Debug-Session-Id': 'ecd812',
-      },
-      body: JSON.stringify({
-        sessionId: 'ecd812',
-        location: 'ProjectsPage.jsx:render',
-        message: 'Empty filtered state',
-        data: {
-          projectsLength: projects.length,
-          filteredLength: filtered.length,
-          nameFilter,
-          nameFilterLen: nameFilter.length,
-          techFilterLen: techFilter ? techFilter.length : undefined,
-        },
-        timestamp: Date.now(),
-        hypothesisId: 'E',
-      }),
-    }).catch(() => {});
-  }
-  // #endregion
 
   return (
     <Container maxWidth='lg' sx={{ py: 4 }}>
@@ -255,9 +124,7 @@ export default function ProjectsPage() {
         </ToggleButtonGroup>
       </Box>
 
-      {loading ? (
-        <Typography color='text.secondary'>Loading projects…</Typography>
-      ) : viewMode === 'grid' ? (
+      {viewMode === 'grid' ? (
         <Grid container spacing={2}>
           {filtered.map((p) => (
             <Grid item xs={12} sm={6} key={p.id}>
@@ -361,7 +228,7 @@ export default function ProjectsPage() {
         </List>
       )}
 
-      {!loading && filtered.length === 0 && (
+      {filtered.length === 0 && (
         <Typography color='text.secondary'>
           No projects match your filters.
         </Typography>
