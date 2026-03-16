@@ -2,6 +2,16 @@ const nodemailer = require('nodemailer');
 
 const INBOX_EMAIL = 'alexandergrimm17@gmail.com';
 
+function escapeHtml(s) {
+  if (typeof s !== 'string') return '';
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -19,8 +29,9 @@ module.exports = async function handler(req, res) {
       });
     }
   }
+  body = body ?? {};
 
-  const { name, email, message } = body || {};
+  const { name, email, message } = body;
 
   if (!name?.trim() || !email?.trim() || !message?.trim()) {
     return res.status(400).json({
@@ -45,21 +56,29 @@ module.exports = async function handler(req, res) {
       auth: { user, pass: password },
     });
 
+    const safeName = escapeHtml(name.trim());
+    const safeEmail = escapeHtml(email.trim());
+    const safeMessage = escapeHtml(message.trim());
+
     await transporter.sendMail({
       from: user,
       to: INBOX_EMAIL,
-      replyTo: email,
-      subject: `Portfolio contact from ${name}`,
-      text: message,
-      html: `<p><strong>From:</strong> ${name} &lt;${email}&gt;</p><p>${message.replace(/\n/g, '<br>')}</p>`,
+      replyTo: email.trim(),
+      subject: `Portfolio contact from ${name.trim()}`,
+      text: message.trim(),
+      html: `<p><strong>From:</strong> ${safeName} &lt;${safeEmail}&gt;</p><p>${safeMessage.replace(/\n/g, '<br>')}</p>`,
     });
 
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('Contact send error:', err);
-    return res.status(500).json({
+    const payload = {
       success: false,
       error: 'Failed to send message. Please try again later.',
-    });
+    };
+    if (process.env.VERCEL_ENV !== 'production') {
+      payload.debug = err.message || String(err);
+    }
+    return res.status(500).json(payload);
   }
 };

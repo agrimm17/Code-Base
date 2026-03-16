@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import Typography from '@mui/material/Typography';
 import profileImage from '../assets/IMG_5202.jpeg';
 
-export default function WelcomeOverlay({ open, onClose, onShowAgain }) {
+export default function WelcomeOverlay({ open, onClose }) {
   return (
     <Dialog
       open={open}
@@ -47,7 +47,7 @@ export default function WelcomeOverlay({ open, onClose, onShowAgain }) {
               Welcome
             </Typography>
             <Typography variant="body1" color="text.secondary" paragraph sx={{ mt: 0 }}>
-              Thanks for stopping by! Have a look around, check out the projects, and feel free to get in touch if you&apos;d like to connect.
+              Thanks for stopping by! Have a look around, check out my projects, and feel free to get in touch if you&apos;d like to connect.
             </Typography>
           </Box>
         </Box>
@@ -56,23 +56,6 @@ export default function WelcomeOverlay({ open, onClose, onShowAgain }) {
         <Button variant="contained" onClick={onClose} fullWidth>
           Get started
         </Button>
-        {onShowAgain && (
-          <Typography
-            component="button"
-            variant="caption"
-            onClick={onShowAgain}
-            sx={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              color: 'text.secondary',
-              textDecoration: 'underline',
-              '&:hover': { color: 'text.primary' },
-            }}
-          >
-            Show again (testing)
-          </Typography>
-        )}
       </DialogActions>
     </Dialog>
   );

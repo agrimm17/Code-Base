@@ -70,21 +70,11 @@ export default function App() {
     setWelcomeOpen(false);
   };
 
-  const handleShowAgain = () => {
-    try {
-      localStorage.removeItem(WELCOME_OVERLAY_STORAGE_KEY);
-    } catch {
-      // ignore
-    }
-    setWelcomeOpen(false);
-  };
-
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <WelcomeOverlay
         open={welcomeOpen}
         onClose={handleWelcomeClose}
-        onShowAgain={handleShowAgain}
       />
       <AppBar position="static">
         <Toolbar>
