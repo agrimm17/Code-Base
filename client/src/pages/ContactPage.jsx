@@ -7,7 +7,10 @@ import Typography from '@mui/material/Typography';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
-const API_BASE = import.meta.env.VITE_API_URL ?? '';
+// In dev, default to Express backend so contact form works when running server from server/
+const API_BASE =
+  import.meta.env.VITE_API_URL ??
+  (import.meta.env.DEV ? 'http://localhost:5001' : '');
 
 export default function ContactPage() {
   const [name, setName] = useState('');
