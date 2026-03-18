@@ -68,7 +68,7 @@ export const projects = [
   },
   {
     id: '5',
-    name: 'Task Manager App',
+    name: '(SAMPLE) Task Manager App',
     description: 'Simple task manager with filters and due dates. Placeholder description.',
     technologies: ['Vue', 'JavaScript', 'Node.js', 'MongoDB'],
     thumbnailUrl: PLACEHOLDER_IMAGE,
@@ -76,7 +76,7 @@ export const projects = [
   },
   {
     id: '6',
-    name: 'Data Pipeline Tool',
+    name: '(SAMPLE) Data Pipeline Tool',
     description: 'ETL pipeline for batch processing. Replace with your real project details.',
     technologies: ['Python', 'Node.js', 'PostgreSQL', 'Docker'],
     thumbnailUrl: PLACEHOLDER_IMAGE,

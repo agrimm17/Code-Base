@@ -49,11 +49,12 @@ export default function ProjectsPage() {
     return nameMatch && techMatch;
   });
 
-  const carouselItems = filtered.length > 0 ? [...filtered, ...filtered, ...filtered] : [];
+  const isCarouselScrollable = filtered.length > 3;
+  const carouselItems = isCarouselScrollable ? [...filtered, ...filtered, ...filtered] : filtered;
 
   const handleCarouselScroll = useCallback(() => {
     const el = carouselScrollRef.current;
-    if (!el || filtered.length === 0) return;
+    if (!el || !isCarouselScrollable) return;
     const segmentWidth = el.scrollWidth / 3;
     const { scrollLeft, clientWidth } = el;
     if (scrollLeft <= 0) {
@@ -61,18 +62,18 @@ export default function ProjectsPage() {
     } else if (scrollLeft >= segmentWidth * 2 - clientWidth - 1) {
       el.scrollLeft = scrollLeft - segmentWidth;
     }
-  }, [filtered.length]);
+  }, [isCarouselScrollable]);
 
   useEffect(() => {
     const el = carouselScrollRef.current;
-    if (viewMode !== 'carousel' || !el || filtered.length === 0) return;
+    if (viewMode !== 'carousel' || !el || !isCarouselScrollable) return;
     el.scrollLeft = el.scrollWidth / 3;
-  }, [viewMode, filtered]);
+  }, [viewMode, filtered, isCarouselScrollable]);
 
   return (
     <Container maxWidth='lg' sx={{ py: 4 }}>
       <Typography variant='h4' component='h1' gutterBottom>
-        Projects (UNDER CONSTRUCTION)
+        Projects
       </Typography>
       <Box
         sx={{
@@ -166,10 +167,10 @@ export default function ProjectsPage() {
       ) : viewMode === 'carousel' ? (
         <Box
           ref={carouselScrollRef}
-          onScroll={handleCarouselScroll}
+          onScroll={isCarouselScrollable ? handleCarouselScroll : undefined}
           sx={{
             display: 'flex',
-            overflowX: 'auto',
+            overflowX: isCarouselScrollable ? 'auto' : 'hidden',
             gap: 2,
             pb: 2,
             minHeight: 320,
