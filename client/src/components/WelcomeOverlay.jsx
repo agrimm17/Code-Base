@@ -37,8 +37,6 @@ export default function WelcomeOverlay({ open, onClose }) {
                 width: 120,
                 height: 120,
                 objectFit: 'cover',
-                objectPosition: 'center bottom',
-                transform: 'scale(1.30)',
               }}
             />
           </Box>
