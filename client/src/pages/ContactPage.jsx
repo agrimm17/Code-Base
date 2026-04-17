@@ -23,9 +23,15 @@ export default function ContactPage() {
     message: '',
   });
 
+  const isValidEmail = (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name.trim() || !email.trim() || !message.trim()) return;
+    if (!isValidEmail(email.trim())) {
+      setSnack({ open: true, severity: 'error', message: 'Please enter a valid email address.' });
+      return;
+    }
     setLoading(true);
     setSnack((s) => ({ ...s, open: false }));
     try {
@@ -59,7 +65,7 @@ export default function ContactPage() {
       setSnack({
         open: true,
         severity: 'error',
-        message: 'Network error. Is the server running?',
+        message: 'Unable to send message. Please try again later.',
       });
     } finally {
       setLoading(false);

@@ -4,6 +4,14 @@ const nodemailer = require('nodemailer');
 
 const INBOX_EMAIL = 'alexandergrimm17@gmail.com';
 
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
 router.post('/', async (req, res) => {
   const { name, email, message } = req.body || {};
 
@@ -36,7 +44,7 @@ router.post('/', async (req, res) => {
       replyTo: email,
       subject: `Portfolio contact from ${name}`,
       text: message,
-      html: `<p><strong>From:</strong> ${name} &lt;${email}&gt;</p><p>${message.replace(/\n/g, '<br>')}</p>`,
+      html: `<p><strong>From:</strong> ${escapeHtml(name)} &lt;${escapeHtml(email)}&gt;</p><p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>`,
     });
 
     res.status(200).json({ success: true });

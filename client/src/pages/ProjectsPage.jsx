@@ -128,7 +128,7 @@ export default function ProjectsPage() {
       {viewMode === 'grid' ? (
         <Grid container spacing={2}>
           {filtered.map((p) => (
-            <Grid item xs={12} sm={6} key={p.id}>
+            <Grid item xs={12} sm={6} md={4} key={p.id}>
               <Card
                 sx={{
                   height: '100%',
@@ -140,7 +140,8 @@ export default function ProjectsPage() {
                   component='img'
                   height='160'
                   image={p.thumbnailUrl || ''}
-                  alt=''
+                  alt={p.name}
+                  loading='lazy'
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography variant='h6' component='h2' gutterBottom>
@@ -191,7 +192,8 @@ export default function ProjectsPage() {
                 component='img'
                 height='160'
                 image={p.thumbnailUrl || ''}
-                alt=''
+                alt={p.name}
+                loading='lazy'
               />
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography variant='h6' component='h2' gutterBottom>

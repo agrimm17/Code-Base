@@ -1,7 +1,8 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, lazy, Suspense } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
@@ -20,9 +21,10 @@ import CheckIcon from '@mui/icons-material/Check';
 import { ColorModeContext } from './theme/ColorModeContext';
 import { THEME_OPTIONS } from './theme/theme';
 import WelcomeOverlay from './components/WelcomeOverlay';
-import IntroductionPage from './pages/IntroductionPage';
-import ProjectsPage from './pages/ProjectsPage';
-import ContactPage from './pages/ContactPage';
+
+const IntroductionPage = lazy(() => import('./pages/IntroductionPage'));
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
 
 const WELCOME_OVERLAY_STORAGE_KEY = 'welcomeOverlaySeen';
 
@@ -146,11 +148,13 @@ export default function App() {
       </Drawer>
 
       <Box component="main" sx={{ flexGrow: 1 }}>
-        <Routes>
-          <Route path="/" element={<IntroductionPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
+        <Suspense fallback={<Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}><CircularProgress /></Box>}>
+          <Routes>
+            <Route path="/" element={<IntroductionPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </Suspense>
       </Box>
     </Box>
   );

@@ -4,7 +4,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import Typography from '@mui/material/Typography';
-import profileImage from '../assets/IMG_5202.jpeg';
+import profileImage from '../assets/profile.webp';
 
 export default function WelcomeOverlay({ open, onClose }) {
   return (

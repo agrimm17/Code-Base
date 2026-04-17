@@ -23,7 +23,7 @@ export const projects = [
       'PromQL',
       'Jest',
     ],
-    thumbnailUrl: '/thumbnails/PodMD.png',
+    thumbnailUrl: '/thumbnails/PodMD.webp',
     link: 'https://github.com/agrimm17/PodMD',
   },
   {
@@ -39,7 +39,7 @@ export const projects = [
       'MUI',
       'OpenAI',
     ],
-    thumbnailUrl: '/thumbnails/Mise-En-Plaice.png',
+    thumbnailUrl: '/thumbnails/Mise-En-Plaice.webp',
     link: 'https://github.com/agrimm17/Mise-En-Plaice',
   },
   {
@@ -55,7 +55,7 @@ export const projects = [
       'MUI',
       'OpenAI',
     ],
-    thumbnailUrl: '/thumbnails/NPC_Generator.png',
+    thumbnailUrl: '/thumbnails/NPC_Generator.webp',
     link: 'https://github.com/agrimm17/NPC-Generator',
   },
   {
@@ -63,7 +63,7 @@ export const projects = [
     name: 'Code-Base',
     description: 'Personal website to showcase projects and information about myself.',
     technologies: ['JavaScript', 'React', 'Node.js', 'Express', 'CSS', 'MUI', 'Nodemailer'],
-    thumbnailUrl: '/thumbnails/Code-Base.png',
+    thumbnailUrl: '/thumbnails/Code-Base.webp',
     link: 'https://github.com/agrimm17/Code-Base',
   },
   {
@@ -71,7 +71,7 @@ export const projects = [
     name: 'Inventory Forcasting Platform',
     description: 'SuiteWorld Hackathon Project that forecasts inventory demand.',
   technologies: ['Python', 'NumPy', 'Pandas', 'FastAPI', 'Streamlit', 'Prophet'],
-    thumbnailUrl: '/thumbnails/Inventory_Forecasting_Platform.png',
+    thumbnailUrl: '/thumbnails/Inventory_Forecasting_Platform.webp',
     link: 'https://github.com/agrimm17/Inventory-Forecasting-Suitelet',
   },
   // {
